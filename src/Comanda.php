@@ -26,7 +26,7 @@ class Comanda
             //$price = 150; metido para prueba
             foreach ($this->comanda as $commandItem => $commandAmount) {
                 {
-                    $price += getPrice($commandItem) * $commandAmount;
+                    #$price += getPrice($commandItem) * $commandAmount;
                     $commandString .= $commandItem . " x" . $commandAmount;
                     if(sizeof($this->comanda) > 1 and $count !== sizeof($this->comanda)){
                         $commandString .= ", ";
@@ -34,7 +34,7 @@ class Comanda
                     $count +=1;
                 }
             }
-            $commandString .= " | Total: " . $price;
+            #$commandString .= " | Total: " . $price;
             return $commandString;
         }
 
@@ -44,7 +44,21 @@ class Comanda
         }
 
         if($actionCommand === "eliminar"){
-            return "eliminar";
+            $actionProduct = $actionParts[1];
+            if(array_key_exists($actionProduct, $this->comanda)) {
+                unset($this->comanda[$actionProduct]);
+                $commandString = "";
+                foreach ($this->comanda as $commandItem => $commandAmount) {
+                    {
+                        $commandString .= $commandItem . " x" . $commandAmount;
+                        if (sizeof($this->comanda) > 1 and $count !== sizeof($this->comanda)) {
+                            $commandString .= ", ";
+                        }
+                        $count += 1;
+                    }
+                }
+            }
+            return $commandString;
         }
         return "";
     }
