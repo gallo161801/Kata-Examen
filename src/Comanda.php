@@ -2,6 +2,9 @@
 
 namespace gallo161801\KataExamen;
 
+use Exception;
+use function PHPUnit\Framework\throwException;
+
 class Comanda
 {
     private Array $comanda;
@@ -57,6 +60,8 @@ class Comanda
                         $count += 1;
                     }
                 }
+            }else{
+                throw new Exception("El plato seleccionado no existe");
             }
             return $commandString;
         }
