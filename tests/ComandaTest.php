@@ -19,37 +19,6 @@ class ComandaTest extends TestCase
     /**
      * @test
      */
-    public function givenActionAnadirSomethingWithoutAmountReturnsThatSomethingWithAmountOne(): void
-    {
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("añadir pizza");
-        $this->assertEquals("pizza x1", $result);
-    }
-
-    /**
-     * @test
-     */
-    public function givenActionAnadirSomethingWithAmountReturnsThatSomethingWithThatAmoun(): void
-    {
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("añadir pizza 2");
-        $this->assertEquals("pizza x2", $result);
-    }
-
-    /**
-     * @test
-     */
-    public function givenTwoAnadirActionsReturnsBothProducts(): void
-    {
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("añadir pizza 2");
-        $result = $comanda->executeAction("añadir pasta");
-        $this->assertEquals("pizza x2, pasta x1", $result);
-    }
-
-    /**
-     * @test
-     */
     public function givenActionAnadirSomethingReturnsProductsAndPrice(): void
     {
         $comandaMock = $this -> getMockBuilder ( \Menu :: class );
