@@ -42,6 +42,10 @@ class Comanda
             $this->comanda = [];
             return "La comanda ha sido vaciada";
         }
+
+        if($actionCommand === "eliminar"){
+            return "eliminar";
+        }
         return "";
     }
 
