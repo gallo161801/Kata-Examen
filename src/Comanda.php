@@ -23,7 +23,7 @@ class Comanda
             $this->comanda[$actionProduct] = $actionAmount;
             $count = 1;
             $commandString = "";
-            //$price = 150; metido para pruebas
+            //$price = 150; metido para prueba
             foreach ($this->comanda as $commandItem => $commandAmount) {
                 {
                     $price += getPrice($commandItem) * $commandAmount;

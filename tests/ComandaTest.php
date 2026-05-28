@@ -21,10 +21,20 @@ class ComandaTest extends TestCase
      */
     public function givenActionAnadirSomethingReturnsProductsAndPrice(): void
     {
-        $comandaMock = $this -> getMockBuilder ( \Menu :: class );
+        #$comandaMock = $this -> getMockBuilder ( \Menu :: class );
         $comanda = new Comanda();
         $result = $comanda->executeAction("Añadir pizza 2");
         $this->assertEquals("pizza x2 | Precio: 150", $result);
+    }
+
+    /**
+     * @test
+     */
+    public function givenActionVaciarReturnsVaciar(): void
+    {
+        $comanda = new Comanda();
+        $result = $comanda->executeAction("Vaciar");
+        $this->assertEquals("Vaciar", $result);
     }
 
 }
