@@ -47,4 +47,15 @@ class ComandaTest extends TestCase
         $this->assertEquals("pizza x2, pasta x1", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenActionAnadirSomethingReturnsProductsAndPrice(): void
+    {
+        $comandaMock = $this -> getMockBuilder ( \Menu :: class );
+        $comanda = new Comanda();
+        $result = $comanda->executeAction("Añadir pizza 2");
+        $this->assertEquals("pizza x2 | Precio: 150", $result);
+    }
+
 }
