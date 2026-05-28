@@ -59,4 +59,12 @@ class ComandaTest extends TestCase
         $result = $comanda->executeAction("Eliminar pan");
     }
 
+    public function givenEliminarSomethingAndCommandIsEmptyReturnsEmptyMessage(): void
+    {
+        $comanda = new Comanda();
+        $result = $comanda->executeAction("Añadir pan");
+        $result = $comanda->executeAction("Eliminar pan");
+        $this->assertEquals("La comanda ha sido vaciada", $result);
+    }
+
 }
