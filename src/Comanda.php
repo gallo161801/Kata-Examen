@@ -8,7 +8,8 @@ class Comanda
 
     public function executeAction($action): String
     {
-        if($action === "añadir"){
+        $actionComand = strtolower($action);
+        if($actionComand === "añadir"){
             return "añadir";
         }
         return "";
