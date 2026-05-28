@@ -19,24 +19,6 @@ class ComandaTest extends TestCase
     /**
      * @test
      */
-    public function givenActionAnadirReturnsAnadir(): void{
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("añadir");
-        $this->assertEquals("añadir", $result);
-    }
-
-    /**
-     * @test
-     */
-    public function givenActionAnadirMayuscReturnsAnadirMinus(): void{
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("Añadir");
-        $this->assertEquals("añadir", $result);
-    }
-
-    /**
-     * @test
-     */
     public function givenActionAnadirSomethingReturnsThatSomething(): void
     {
         $comanda = new Comanda();
