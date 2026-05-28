@@ -8,6 +8,9 @@ class Comanda
 
     public function executeAction($action): String
     {
+        if($action === "añadir"){
+            return "añadir";
+        }
         return "";
     }
 
