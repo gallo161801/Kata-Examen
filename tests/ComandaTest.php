@@ -30,16 +30,6 @@ class ComandaTest extends TestCase
     /**
      * @test
      */
-    public function givenActionVaciarReturnsVaciar(): void
-    {
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("Vaciar");
-        $this->assertEquals("vaciar", $result);
-    }
-
-    /**
-     * @test
-     */
     public function givenActionVaciarReturnsMessage(): void
     {
         $comanda = new Comanda();
