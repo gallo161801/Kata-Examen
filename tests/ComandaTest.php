@@ -49,4 +49,14 @@ class ComandaTest extends TestCase
         $this->assertEquals("pizza x1", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenEliminarSomethingThatNotIsInComandaThrowsException(): void
+    {
+        $comanda = new Comanda();
+        $this->expectExceptionMessage("El plato seleccionado no existe");
+        $result = $comanda->executeAction("Eliminar pan");
+    }
+
 }
