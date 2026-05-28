@@ -13,11 +13,20 @@ class Comanda
     {
         $action = strtolower($action);
         $actionParts = explode(" ", $action);
-        $actionComand = $actionParts[0];
-        if($actionComand === "añadir"){
+        $actionCommand = $actionParts[0];
+        if($actionCommand === "añadir"){
             $actionProduct = $actionParts[1];
-            $this->comanda[] = $actionProduct;
-            return join(" ", $this->comanda);
+            $actionAmount = 1;
+            if(sizeof($actionParts) == 3){
+                $actionAmount = $actionParts[2];
+            }
+            $this->comanda[$actionProduct] = $actionAmount;
+
+            foreach ($this->comanda as $commandItem => $commandAmount) {
+                $commandString .= $commandItem . " x";
+                $commandString.= $commandAmount;
+            }
+            return $commandString;
         }
         return "";
     }

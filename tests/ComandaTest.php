@@ -26,6 +26,9 @@ class ComandaTest extends TestCase
         $this->assertEquals("pizza", $result);
     }
 
+    /**
+     * @test
+     */
     public function givenActionAnadirSomethingWithoutAmountReturnsThatSomethingWithAmountOne(): void
     {
         $comanda = new Comanda();
