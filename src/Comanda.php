@@ -29,7 +29,7 @@ class Comanda
             //$price = 150; metido para prueba
             foreach ($this->comanda as $commandItem => $commandAmount) {
                 {
-                    #$price += getPrice($commandItem) * $commandAmount;
+                    $price += getPrice($commandItem) * $commandAmount;
                     $commandString .= $commandItem . " x" . $commandAmount;
                     if(sizeof($this->comanda) > 1 and $count !== sizeof($this->comanda)){
                         $commandString .= ", ";
@@ -37,7 +37,7 @@ class Comanda
                     $count +=1;
                 }
             }
-            #$commandString .= " | Total: " . $price;
+            $commandString .= " | Total: " . $price;
             return $commandString;
         }
 
