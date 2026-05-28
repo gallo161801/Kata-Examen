@@ -37,6 +37,10 @@ class Comanda
             $commandString .= " | Total: " . $price;
             return $commandString;
         }
+
+        if($actionCommand === "vaciar"){
+            return "vaciar";
+        }
         return "";
     }
 

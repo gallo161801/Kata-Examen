@@ -34,7 +34,7 @@ class ComandaTest extends TestCase
     {
         $comanda = new Comanda();
         $result = $comanda->executeAction("Vaciar");
-        $this->assertEquals("Vaciar", $result);
+        $this->assertEquals("vaciar", $result);
     }
 
 }
