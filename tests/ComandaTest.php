@@ -59,6 +59,9 @@ class ComandaTest extends TestCase
         $result = $comanda->executeAction("Eliminar pan");
     }
 
+    /**
+     * @test
+     */
     public function givenEliminarSomethingAndCommandIsEmptyReturnsEmptyMessage(): void
     {
         $comanda = new Comanda();

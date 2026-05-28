@@ -51,6 +51,9 @@ class Comanda
             if(array_key_exists($actionProduct, $this->comanda)) {
                 unset($this->comanda[$actionProduct]);
                 $commandString = "";
+                if(sizeof($this->comanda) === 0){
+                    return "La comanda ha sido vaciada";
+                }
                 foreach ($this->comanda as $commandItem => $commandAmount) {
                     {
                         $commandString .= $commandItem . " x" . $commandAmount;
