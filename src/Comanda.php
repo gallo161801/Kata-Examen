@@ -23,8 +23,7 @@ class Comanda
             $this->comanda[$actionProduct] = $actionAmount;
 
             foreach ($this->comanda as $commandItem => $commandAmount) {
-                $commandString .= $commandItem . " x";
-                $commandString.= $commandAmount;
+                $commandString .= $commandItem . " x" . $commandAmount;
             }
             return $commandString;
         }

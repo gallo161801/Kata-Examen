@@ -26,4 +26,14 @@ class ComandaTest extends TestCase
         $this->assertEquals("pizza x1", $result);
     }
 
+    /**
+     * @test
+     */
+    public function givenActionAnadirSomethingWithAmountReturnsThatSomethingWithThatAmoun(): void
+    {
+        $comanda = new Comanda();
+        $result = $comanda->executeAction("añadir pizza 2");
+        $this->assertEquals("pizza x2", $result);
+    }
+
 }
