@@ -22,8 +22,11 @@ class Comanda
             }
             $this->comanda[$actionProduct] = $actionAmount;
             $count = 1;
+            $commandString = "";
+            //$price = 150; metido para pruebas
             foreach ($this->comanda as $commandItem => $commandAmount) {
                 {
+                    $price += getPrice($commandItem) * $commandAmount;
                     $commandString .= $commandItem . " x" . $commandAmount;
                     if(sizeof($this->comanda) > 1 and $count !== sizeof($this->comanda)){
                         $commandString .= ", ";
@@ -31,6 +34,7 @@ class Comanda
                     $count +=1;
                 }
             }
+            $commandString .= " | Total: " . $price;
             return $commandString;
         }
         return "";
