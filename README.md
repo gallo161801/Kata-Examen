@@ -4,11 +4,11 @@
 
 ```bash
 # Construir la imagen
-docker build -t fizzbuzz-php .
+docker build -t examen-php .
 
 # Entrar al contenedor
 # Al entrar, si no existe vendor/, se instala automáticamente
-docker run -it -v "$(pwd)":/app fizzbuzz-php bash
+docker run -it -v "$(pwd)":/app examen-php bash
 
 # Ejecutar los tests dentro del contenedor
 vendor/bin/phpunit
