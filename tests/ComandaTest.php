@@ -37,4 +37,11 @@ class ComandaTest extends TestCase
         $this->assertEquals("La comanda ha sido vaciada", $result);
     }
 
+    public function givenActionEliminarReturnsEliminar(): void
+    {
+        $comanda = new Comanda();
+        $result = $comanda->executeAction("Eliminar");
+        $this->assertEquals("eliminar", $result);
+    }
+
 }
