@@ -4,13 +4,20 @@ namespace gallo161801\KataExamen;
 
 class Comanda
 {
-    public function __construct(){}
+    private Array $comanda;
+    public function __construct(){
+        $this->comanda = [];
+    }
 
     public function executeAction($action): String
     {
-        $actionComand = strtolower($action);
+        $action = strtolower($action);
+        $actionParts = explode(" ", $action);
+        $actionComand = $actionParts[0];
         if($actionComand === "añadir"){
-            return "añadir";
+            $actionProduct = $actionParts[1];
+            $this->comanda[] = $actionProduct;
+            return join(" ", $this->comanda);
         }
         return "";
     }
