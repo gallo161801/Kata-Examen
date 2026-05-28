@@ -21,9 +21,15 @@ class Comanda
                 $actionAmount = $actionParts[2];
             }
             $this->comanda[$actionProduct] = $actionAmount;
-
+            $count = 1;
             foreach ($this->comanda as $commandItem => $commandAmount) {
-                $commandString .= $commandItem . " x" . $commandAmount;
+                {
+                    $commandString .= $commandItem . " x" . $commandAmount;
+                    if(sizeof($this->comanda) > 1 and $count !== sizeof($this->comanda)){
+                        $commandString .= ", ";
+                    }
+                    $count +=1;
+                }
             }
             return $commandString;
         }

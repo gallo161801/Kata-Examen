@@ -44,7 +44,7 @@ class ComandaTest extends TestCase
         $comanda = new Comanda();
         $result = $comanda->executeAction("añadir pizza 2");
         $result = $comanda->executeAction("añadir pasta");
-        $this->assertEquals("pasta x1, pizza x2", $result);
+        $this->assertEquals("pizza x2, pasta x1", $result);
     }
 
 }
