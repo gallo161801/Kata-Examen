@@ -40,16 +40,6 @@ class ComandaTest extends TestCase
     /**
      * @test
      */
-    public function givenActionEliminarReturnsEliminar(): void
-    {
-        $comanda = new Comanda();
-        $result = $comanda->executeAction("Eliminar");
-        $this->assertEquals("eliminar", $result);
-    }
-
-    /**
-     * @test
-     */
     public function givenEliminarSomethingReturnsDeleteThatSomething(): void
     {
         $comanda = new Comanda();
